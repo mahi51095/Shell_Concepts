@@ -35,7 +35,7 @@ then
 fi
 
 #Need to check installation success or not
-yum install mysql -y &>>$LOGFILE
+yum install mysqlll -y &>>$LOGFILE
 
 VALIDATE $? "Installing MySQL."
 
