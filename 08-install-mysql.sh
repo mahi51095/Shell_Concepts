@@ -17,7 +17,7 @@ VALIDATE(){
 if [ $1 -ne 0 ]
 then 
     echo -e "$2.. $R is FAILURE $N"
-    exit 1
+    
 else
     echo -e "$2.. $G is SUCCESS $N"
 fi
@@ -35,11 +35,11 @@ then
 fi
 
 #Need to check installation success or not
-yum install mysql -y &>>$LOGFILE
+yum install mysqlll -y &>>$LOGFILE
 
 VALIDATE $? "Installing MySQL."
 
-yum install postfixxx -y &>>$LOGFILE
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Installing Postfix."
 
