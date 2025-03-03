@@ -35,11 +35,11 @@ then
 fi
 
 #Need to check installation success or not
-yum install mysqlll -y &>>$LOGFILE
+yum install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installing MySQL."
 
-yum install postfix -y &>>$LOGFILE
+yum install postfixxx -y &>>$LOGFILE
 
 VALIDATE $? "Installing Postfix."
 
