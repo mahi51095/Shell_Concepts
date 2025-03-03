@@ -7,16 +7,19 @@
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 #This function should validate the previous command and inform user , Success or failure.
 VALIDATE(){
    #$1 -> receive the argument 1 
 if [ $1 -ne 0 ]
 then 
-    echo "$2.. is FAILURE."
+    echo "$2.. $R is FAILURE $N"
     exit 1
 else
-    echo "$2.. is SUCCESS"
+    echo "$2.. $G is SUCCESS $N"
 fi
 
 }
