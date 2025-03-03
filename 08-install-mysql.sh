@@ -4,7 +4,10 @@
 #if not root user ,exit the programm and inform user to run with sudo access.
 #if root user , install mysql
 
-USERID=$(id -u)
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
 #This function should validate the previous command and inform user , Success or failure.
 VALIDATE(){
    #$1 -> receive the argument 1 
@@ -18,6 +21,10 @@ fi
 
 }
 
+#This will check user id
+USERID=$(id -u)
+
+
 if [ $USERID -ne 0 ]
 then
     echo "ERROR : Please run this script with root access."
@@ -25,11 +32,11 @@ then
 fi
 
 #Need to check installation success or not
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installing MySQL."
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Installing Postfix."
 
