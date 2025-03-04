@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 
 APP_LOGS_DIR=/home/centos/Shell_Concepts/app-logs
